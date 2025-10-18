@@ -1,1 +1,9 @@
-*.sqlite*
+*.sqlite
+
+# Open Server развертка
+.osp
+project.ini
+
+# Игнорируем основной конфиг оставляем только example
+*.env
+!.env.example
