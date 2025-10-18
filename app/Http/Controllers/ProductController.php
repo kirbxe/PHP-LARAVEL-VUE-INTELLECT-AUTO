@@ -12,7 +12,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+            $products = Product::all();
+
+         //   return view(TODO, compact('products'));
+    
     }
 
     /**
@@ -20,7 +23,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        // return view(TODO);
     }
 
     /**
@@ -28,7 +31,11 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // $data = [
+
+
+
+        //]
     }
 
     /**

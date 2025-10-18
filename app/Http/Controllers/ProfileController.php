@@ -23,7 +23,7 @@ class ProfileController extends Controller
             'status' => session('status'),
         ]);
     }
-
+    
     /**
      * Update the user's profile information.
      */
