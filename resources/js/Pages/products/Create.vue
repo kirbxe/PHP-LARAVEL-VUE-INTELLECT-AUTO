@@ -15,16 +15,6 @@ import { Head } from '@inertiajs/vue3';
             </h2>
         </template>
         <div class="py-12 flex justify-center ">
-
-          <form action="">
-
-            <div class="space-y-2">
-                <Label>Fuck you</Label>
-            </div>
-
-          </form>
-
-
         </div>
     </AuthenticatedLayout>
 </template>
