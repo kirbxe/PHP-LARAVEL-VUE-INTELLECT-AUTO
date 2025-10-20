@@ -1,0 +1,25 @@
+<script setup>
+
+</script>
+
+<template>
+    <a class='rounded p-2 w-10 h-10 bg-[#141414]'>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_2002_214)">
+    <path d="M17.625 17.25H8.54719C8.19591 17.2499 7.85579 17.1266 7.58612 16.9015C7.31646 16.6764 7.13435 16.3637 7.07156 16.0181L4.56844 2.25H2.25" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M8.625 21C9.66053 21 10.5 20.1605 10.5 19.125C10.5 18.0895 9.66053 17.25 8.625 17.25C7.58947 17.25 6.75 18.0895 6.75 19.125C6.75 20.1605 7.58947 21 8.625 21Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M17.625 21C18.6605 21 19.5 20.1605 19.5 19.125C19.5 18.0895 18.6605 17.25 17.625 17.25C16.5895 17.25 15.75 18.0895 15.75 19.125C15.75 20.1605 16.5895 21 17.625 21Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M6.61406 13.5H18.3844C18.7357 13.4999 19.0758 13.3766 19.3454 13.1515C19.6151 12.9264 19.7972 12.6137 19.86 12.2681L21 6H5.25" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <defs>
+    <clipPath id="clip0_2002_214">
+      <rect width="24" height="24" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+    </a>
+</template>
+
+<style scoped>
+
+</style>

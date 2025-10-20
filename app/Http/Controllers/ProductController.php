@@ -13,7 +13,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-         return Inertia::render('products/Index', []);
+        $products = Product::paginate(10);
+        
+         return Inertia::render('products/CatalogProduct', 
+        [
+            'products' => $products,
+        ]);
     }
 
     /**
