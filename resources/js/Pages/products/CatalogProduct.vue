@@ -23,7 +23,7 @@ const pageKey = computed(() => props.products.current_page)
                     class="border p-1 rounded-xl hover:bg-blue-500 border-black">Click
                     for create</button></Link>
             </div>
-            <div class='grid grid-rows-2 grid-cols-5 gap-y-[10px]  gap-x-[10px] px-12 font-[Roboto]'>
+            <div class='grid grid-rows-2 grid-cols-5 gap-y-[10px]  gap-x-[10px] px-[150px] font-[Roboto]'>
                 <div v-for="product in props.products.data" :key="product.id"
                     class='w-[200px] h-[462px] flex flex-col justify-between mb-1 font-roboto'>
                     <div class='rounded-[10px] p-2 w-full h-[270px]'>

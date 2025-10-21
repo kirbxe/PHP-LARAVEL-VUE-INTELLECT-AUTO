@@ -14,7 +14,13 @@ import { Head } from '@inertiajs/vue3';
                 Create Product
             </h2>
         </template>
-        <div class="py-12 flex justify-center ">
+        <div class='py-12 flex justify-center font-[Roboto]'>
+
+            <form :action="route()">
+
+
+            </form>
+
         </div>
     </AuthenticatedLayout>
 </template>

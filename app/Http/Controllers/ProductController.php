@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -14,11 +15,13 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::paginate(10);
-        
-         return Inertia::render('products/CatalogProduct', 
-        [
-            'products' => $products,
-        ]);
+
+        return Inertia::render(
+            'products/CatalogProduct',
+            [
+                'products' => $products,
+            ]
+        );
     }
 
     /**
@@ -34,11 +37,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-       // $data = [
+        $data =
+            [
+                'article' => $request->article,
+                'name' => $request->name,
+            ];
 
 
-
-        //]
     }
 
     /**

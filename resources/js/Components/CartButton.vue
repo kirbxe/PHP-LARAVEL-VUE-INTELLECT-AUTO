@@ -1,9 +1,13 @@
 <script setup>
 
+const props = defineProps({
+url: string
+}
+)
 </script>
 
 <template>
-    <a class='cursor-pointer rounded p-2 w-10 h-10 bg-[#141414]'>
+    <a href={{ props.url }} class='cursor-pointer rounded p-2 w-10 h-10 bg-[#141414]'>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g clip-path="url(#clip0_2002_214)">
     <path d="M17.625 17.25H8.54719C8.19591 17.2499 7.85579 17.1266 7.58612 16.9015C7.31646 16.6764 7.13435 16.3637 7.07156 16.0181L4.56844 2.25H2.25" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
