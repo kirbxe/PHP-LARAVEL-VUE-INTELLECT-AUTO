@@ -1,9 +1,9 @@
 <script setup>
 
-const props = defineProps({
-url: string
-}
-)
+// const props = defineProps({
+// url: string
+// }
+// )
 </script>
 
 <template>
