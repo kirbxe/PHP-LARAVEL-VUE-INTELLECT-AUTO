@@ -12,7 +12,7 @@ defineProps({
         <p class="font-[Roboto] font-medium">{{ Text }}</p>
         <img
             class="size-[15px] color-[#141414] font-[1.2px]"
-            src="../../../public/image/Vector.svg"
+            src="/public/image/Vector.svg"
             alt="asd"
         />
     </div>

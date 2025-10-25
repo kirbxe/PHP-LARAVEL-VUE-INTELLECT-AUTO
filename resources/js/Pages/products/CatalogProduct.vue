@@ -3,15 +3,14 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
 import CartButton from "@/Components/CartButton.vue";
 import { computed } from "vue";
-import SortBlock from "../../Components/SortBlock.vue";
-import Catalog from "../../Components/Catalog.vue";
-import TitleItem from "@/ui/TitleItem.vue";
-import SelectSortCategory from "@/ui/SelectSortCategory.vue";
-import Search from "@/ui/Search.vue";
-import ProductImage from "@/Components/ProductImage.vue";
-import RatingProduct from "@/Components/RatingProduct.vue";
-import NameProduct from "@/Components/NameProduct.vue";
-import PriceProduct from "@/Components/PriceProduct.vue";
+import ProductImage from "@/Components/Catalog/ProductImage.vue";
+import RatingProduct from "@/Components/Catalog/RatingProduct.vue";
+import NameProduct from "@/Components/Catalog/NameProduct.vue";
+import PriceProduct from "@/Components/Catalog/PriceProduct.vue";
+import Catalog from "@/Components/Catalog/Catalog.vue";
+import SortBlock from "@/Components/Catalog/SortBlock.vue";
+import TitleItem from "@/Components/Catalog/ui/TitleItem.vue";
+import AccordMenu from "@/Components/Catalog/AccordMenu.vue";
 
 const props = defineProps({ products: Object });
 
@@ -40,11 +39,7 @@ const pageKey = computed(() => props.products.current_page);
                 <div class="mx-14 my-6 flex">
                     <SortBlock>
                         <TitleItem Title="Предохранители" class="mb-12" />
-                        <SelectSortCategory
-                            Text="Поиск с полем ввода"
-                            class="mb-6"
-                        />
-                        <Search />
+                        <AccordMenu />
                     </SortBlock>
                     <Catalog>
                         <div
