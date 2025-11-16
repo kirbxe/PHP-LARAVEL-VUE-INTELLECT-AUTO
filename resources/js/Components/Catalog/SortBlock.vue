@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <div class="w-[312px] h-[695px] border-[1px] border-black">
+    <div class="min-w-max h-auto pr-16">
         <slot></slot>
     </div>
 </template>

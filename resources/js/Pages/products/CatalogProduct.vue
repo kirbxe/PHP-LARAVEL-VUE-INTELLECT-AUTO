@@ -1,16 +1,12 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
-import CartButton from "@/Components/CartButton.vue";
 import { computed } from "vue";
-import ProductImage from "@/Components/Catalog/ProductImage.vue";
-import RatingProduct from "@/Components/Catalog/RatingProduct.vue";
-import NameProduct from "@/Components/Catalog/NameProduct.vue";
-import PriceProduct from "@/Components/Catalog/PriceProduct.vue";
 import Catalog from "@/Components/Catalog/Catalog.vue";
 import SortBlock from "@/Components/Catalog/SortBlock.vue";
 import TitleItem from "@/Components/Catalog/ui/TitleItem.vue";
 import AccordMenu from "@/Components/Catalog/AccordMenu.vue";
+import CardProduct from "@/Components/Catalog/CardProduct.vue";
 
 const props = defineProps({ products: Object });
 
@@ -20,78 +16,74 @@ const pageKey = computed(() => props.products.current_page);
 <template>
     <AuthenticatedLayout>
         <Head title="Product" />
-        <template #header>
-            <h2 class="text-xl font-semibold leading-tight text-gray-800">
-                Product Catalog
-            </h2>
-        </template>
         <div :key="pageKey">
-            <div class="py-12 flex justify-center font-[Roboto]">
-                <Link :href="route('products.create')"
-                    ><button
-                        class="border p-1 rounded-xl hover:bg-blue-500 border-black"
-                    >
-                        Click for create
-                    </button></Link
-                >
-            </div>
-            <div class="py-12 flex justify-center bg-white">
-                <div class="mx-14 my-6 flex">
+            <div class="flex justify-center bg-[#F7F7F7]">
+                <div class="px-10 py-4 flex">
+                    <
                     <SortBlock>
-                        <TitleItem Title="Предохранители" class="mb-12" />
-                        <AccordMenu />
+                        <TitleItem Title="Каталог товаров" />
                     </SortBlock>
+
                     <Catalog>
                         <div
                             v-for="product in props.products.data"
                             :key="product.id"
-                            class="w-[200px] h-[470px] flex flex-col justify-between mb-1 font-roboto"
                         >
-                            <div class="w-auto flex flex-col gap-4">
-                                <ProductImage :LinkSrc="product.picture1" />
-                                <RatingProduct rating="Рейтинг?" />
-                                <NameProduct :NameProduct="product.name" />
-                            </div>
-                            <!-- Не хватает поля -->
-                            <div class="flex justify-between">
-                                <div class="flex items-end">
-                                    <PriceProduct
-                                        :Price="product.price"
-                                        class="mr-2"
-                                    />
-                                    <PriceProduct
-                                        :Price="product.price"
-                                        class="text-gray-400 line-through"
-                                    />
-                                </div>
-                                <CartButton />
-                            </div>
+                            <CardProduct
+                                :Name="product.name"
+                                :Price="product.price"
+                                :OldPrice="product.price"
+                                :Image="product.picture1"
+                                :PackagingText="product.packaging"
+                                TextButton="Купить"
+                            />
                         </div>
                     </Catalog>
                 </div>
             </div>
 
             <div class="flex flex-col justify-center">
-                <div
-                    class="flex justify-center items-center mt-8 font-[Roboto]"
-                >
-                    Показано {{ props.products.from }} по
-                    {{ props.products.to }} из {{ props.products.total }}
-                </div>
                 <div class="flex gap-2 justify-center">
                     <Link
                         v-if="props.products.prev_page_url"
                         :href="props.products.prev_page_url"
-                        class="px-4 py-4 border rounded-md border-[black] hover:bg-gray-300"
+                        class="p-3 border rounded-md bg-white border-[#F1F1F1] hover:bg-gray-300"
                     >
-                        Назад
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                        >
+                            <title>Left-arrow-alt SVG Icon</title>
+                            <path
+                                fill="#707070"
+                                d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293l-1.414-1.414L4.586 12l6.707 6.707z"
+                            />
+                        </svg>
                     </Link>
+                    <div
+                        class="w-[44px] h-[44px] flex items-center justify-center border rounded-md bg-white border-[#F1F1F1] hover:bg-gray-300 text-[#707070]"
+                    >
+                        {{ props.products.current_page }}
+                    </div>
                     <Link
                         v-if="props.products.next_page_url"
                         :href="props.products.next_page_url"
-                        class="px-4 py-4 border rounded-md border-[black] hover:bg-gray-300"
+                        class="p-3 border rounded-md bg-white border-[#F1F1F1] hover:bg-gray-300"
                     >
-                        Вперед
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                        >
+                            <title>Right-arrow-alt SVG Icon</title>
+                            <path
+                                fill="#707070"
+                                d="m11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707l-1.414 1.414L15.586 11H6v2h9.586z"
+                            />
+                        </svg>
                     </Link>
                 </div>
             </div>

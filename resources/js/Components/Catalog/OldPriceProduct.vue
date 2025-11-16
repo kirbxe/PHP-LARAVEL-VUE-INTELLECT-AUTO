@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-    Price: {
+    OldPrice: {
         type: Number,
         required: true,
     },
@@ -8,8 +8,8 @@ defineProps({
 </script>
 
 <template>
-    <div class="text-[#313131] text-base font-medium font-roboto">
-        {{ Price }}₽
+    <div class="text-[#707070] line-through text-xs font-medium font-roboto">
+        {{ OldPrice }}0₽
     </div>
 </template>
 

@@ -1,4 +1,8 @@
 @font-face {
     font-family: Roboto;
-    src: url('../fonts/Roboto.ttf');
+    src: url('./fonts/Roboto.ttf');
+}
+@font-face {
+    font-family: IBMPlexSans;
+    src: url('./fonts/IBMPlexSans-VariableFont_wdth\,wght.ttf');
 }
