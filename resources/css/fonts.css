@@ -6,3 +6,7 @@
     font-family: IBMPlexSans;
     src: url('./fonts/IBMPlexSans-VariableFont_wdth\,wght.ttf');
 }
+@font-face {
+    font-family: Inter;
+    src: url('./fonts/Inter-VariableFont_opsz\,wght.ttf');
+}
