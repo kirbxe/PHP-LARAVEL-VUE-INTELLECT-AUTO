@@ -9,7 +9,7 @@ const props = defineProps({
 
 <template>
     <div
-        class="text-[14px] font-medium font-[Roboto] color-[#313131] lineClamp"
+        class="text-[14px] font-regular font-inter text-[#313131] lineClamp"
         :title="NameProduct"
     >
         {{ NameProduct }}

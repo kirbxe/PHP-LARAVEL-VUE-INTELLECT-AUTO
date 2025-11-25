@@ -337,13 +337,13 @@ const contacts = [
                                     /></a>
                                 </div>
                             </div>
-                            <p class="text-xs font-normal text-gray-500">
+                            <p class="text-[12px] font-regular font-inter text-gray-500">
                                 &copy; ООО Интеллект-Авто 2025
                             </p>
                         </div>
                         <div class="flex gap-5">
                             <ul class="flex flex-col gap-3">
-                                <li class="flex mb-2">Покупателям</li>
+                                <li class="flex mb-2 text-[#313131]">Покупателям</li>
                                 <li
                                     v-for="buyer in buyers"
                                     :key="buyer.value"
@@ -356,7 +356,7 @@ const contacts = [
                                 </li>
                             </ul>
                             <ul class="flex flex-col gap-3">
-                                <li class="flex mb-2">Информация</li>
+                                <li class="flex mb-2 text-[#313131]">Информация</li>
                                 <li
                                     v-for="info in informations"
                                     :key="info.value"
@@ -369,7 +369,7 @@ const contacts = [
                                 </li>
                             </ul>
                             <ul class="flex flex-col gap-3">
-                                <li class="flex mb-2">Контакты</li>
+                                <li class="flex mb-2 text-[#313131]">Контакты</li>
                                 <li
                                     v-for="contact in contacts"
                                     :key="contact.value"

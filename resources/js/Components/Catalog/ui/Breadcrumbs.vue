@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-    Title: {
+    text: {
         type: String,
         required: true,
     },
@@ -8,9 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <h2 class="font-medium text-[24px] font-inter text-[#0B0D0D]">
-        {{ Title }}
-    </h2>
+    <p class="font-inter text-[12px] text-[#707070] min-w-max h-auto mb-[12px] pl-1 cursor-pointer">{{ text }}</p>
 </template>
 
 <style scoped></style>
