@@ -9,7 +9,7 @@ defineProps({
 
 <template>
     <div>
-        <p class="text-[#929292] text-xs font-normal font-roboto">
+        <p class="text-[#929292] text-xs font-regular font-inter">
             {{ Packaging }}
         </p>
     </div>

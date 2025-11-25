@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="text-[#313131] text-base font-medium font-roboto">
+    <div class="text-[#313131] text-base font-regular font-inter">
         {{ Price }}₽
     </div>
 </template>

@@ -6,6 +6,8 @@ import Catalog from "@/Components/Catalog/Catalog.vue";
 import SortBlock from "@/Components/Catalog/SortBlock.vue";
 import TitleItem from "@/Components/Catalog/ui/TitleItem.vue";
 import CardProduct from "@/Components/Catalog/CardProduct.vue";
+import Breadcrumbs from "@/Components/Catalog/ui/Breadcrumbs.vue";
+import SortBreadcrumbs from "@/Components/Catalog/SortBreadcrumbs.vue";
 
 const props = defineProps({ products: Object });
 
@@ -18,9 +20,15 @@ const pageKey = computed(() => props.products.current_page);
         <div :key="pageKey">
             <div class="flex justify-center bg-[#F7F7F7]">
                 <div class="px-10 py-4 flex">
-                    <SortBlock>
+                    
+                    <SortBlock class="mr-[110px]">
+                        <SortBreadcrumbs> 
+                            <Link class="font-inter text-[12px] text-[#707070] min-w-max h-auto mb-[12px]"
+                             href="/dashboard">Главная</Link> <Breadcrumbs text = "/ Каталог товаров" />
+                        </SortBreadcrumbs>
                         <TitleItem Title="Каталог товаров" />
                     </SortBlock>
+                    
                     <div>
                         <Catalog>
                             <div

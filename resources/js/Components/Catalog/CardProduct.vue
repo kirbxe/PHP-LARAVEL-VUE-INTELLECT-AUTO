@@ -36,7 +36,7 @@ defineProps({
 
 <template>
     <div>
-        <div class="max-w-max h-auto flex flex-col gap-4 items-start">
+        <div class="w-[250px] h-auto flex flex-col gap-4 items-start">
             <ProductImage :LinkSrc="Image" />
             <div>
                 <NameProduct :NameProduct="Name" />
