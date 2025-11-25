@@ -15,8 +15,8 @@ const props = defineProps({
 const classes = computed(
     () =>
         props.active
-            ? "inline-flex items-center text-xs font-normal font-Inter leading-4 text-[#707070] focus:outline-none transition duration-150 ease-in-out" //Статичное
-            : "inline-flex items-center text-xs font-normal leading-4 text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-700 transition duration-150 ease-in-out" //Активное
+            ? "shrink-0 inline-flex items-center text-xs font-normal font-Inter leading-4 text-[#707070] focus:outline-none transition duration-150 ease-in-out" //Статичное
+            : "shrink-0 inline-flex items-center text-xs font-normal leading-4 text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-700 transition duration-150 ease-in-out" //Активное
 );
 </script>
 

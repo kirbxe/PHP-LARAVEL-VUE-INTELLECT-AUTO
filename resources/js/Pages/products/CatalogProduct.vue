@@ -16,7 +16,9 @@ const pageKey = computed(() => props.products.current_page);
     <AuthenticatedLayout>
         <Head title="Product" />
         <div :key="pageKey">
-            <div class="flex justify-center bg-[#F7F7F7]">
+            <div
+                class="max-w-[1360px] mx-auto flex justify-center bg-[#F7F7F7]"
+            >
                 <div class="px-10 py-4 flex">
                     <SortBlock>
                         <TitleItem Title="Каталог товаров" />
