@@ -50,91 +50,75 @@ const generatePageUrl = (page) => {
             <div
                 class="max-w-[1360px] mx-auto flex justify-center bg-[#F7F7F7]"
             >
-                <div class="pt-4 w-full">
-                    <div class="flex justify-between gap-8">
-                        <div>
-                            <SortBlock>
-                                <SortBreadcrumbs>
-                                    <Link
-                                        class="font-inter text-[12px] text-[#707070] min-w-max h-auto"
-                                        href="/dashboard"
-                                        >Главная</Link
-                                    >
-                                    <Breadcrumbs text="/ Каталог товаров" />
-                                </SortBreadcrumbs>
-                                <TitleItem Title="Каталог товаров" />
-                            </SortBlock>
-                        </div>
-
-                        <div>
-                            <Catalog>
-                                <div
-                                    v-for="product in props.products.data"
-                                    :key="product.id"
+                <div class="px-10 py-4 flex">
+                    
+                    <SortBlock class="mr-[110px]">
+                        <SortBreadcrumbs> 
+                            <Link class="font-inter text-[12px] text-[#707070] min-w-max h-auto mb-[12px]"
+                             href="/dashboard">Главная</Link> <Breadcrumbs text = "/ Каталог товаров" />
+                        </SortBreadcrumbs>
+                        <TitleItem Title="Каталог товаров" />
+                    </SortBlock>
+                    
+                    <div>
+                        <Catalog>
+                            <div
+                                v-for="product in props.products.data"
+                                :key="product.id"
+                            >
+                                <CardProduct
+                                    :Name="product.name"
+                                    :Price="product.price"
+                                    :OldPrice="product.price"
+                                    :Image="product.picture1"
+                                    :PackagingText="product.packaging"
+                                    TextButton="Купить"
+                                />
+                            </div>
+                        </Catalog>
+                        <div class="flex flex-col justify-center mt-16">
+                            <div class="flex gap-2 justify-center">
+                                <Link
+                                    v-if="props.products.prev_page_url"
+                                    :href="props.products.prev_page_url"
+                                    class="p-3 border rounded-md bg-white border-[#F1F1F1] hover:bg-gray-300"
                                 >
-                                    <CardProduct
-                                        :Name="product.name"
-                                        :Price="product.price"
-                                        :OldPrice="product.price"
-                                        :Image="product.picture1"
-                                        :PackagingText="product.packaging"
-                                        TextButton="Купить"
-                                    />
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <title>Left-arrow-alt SVG Icon</title>
+                                        <path
+                                            fill="#707070"
+                                            d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293l-1.414-1.414L4.586 12l6.707 6.707z"
+                                        />
+                                    </svg>
+                                </Link>
+                                <div
+                                    class="w-[44px] h-[44px] flex items-center justify-center border rounded-md bg-white border-[#F1F1F1] hover:bg-gray-300 text-[#707070]"
+                                >
+                                    {{ props.products.current_page }}
                                 </div>
-                            </Catalog>
-
-                            <div class="flex flex-col justify-center mt-[25px] mb-[60px]">
-                                <div class="flex gap-2 justify-center">
-                                    <Link
-                                        v-if="props.products.prev_page_url"
-                                        :href="props.products.prev_page_url"
-                                        class="p-3 border rounded-md bg-white border-[#F1F1F1] hover:bg-gray-300"
+                                <Link
+                                    v-if="props.products.next_page_url"
+                                    :href="props.products.next_page_url"
+                                    class="p-3 border rounded-md bg-white border-[#F1F1F1] hover:bg-gray-300"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
                                     >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                fill="#707070"
-                                                d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293l-1.414-1.414L4.586 12l6.707 6.707z"
-                                            />
-                                        </svg>
-                                    </Link>
-
-                                    <Link
-                                        v-for="page in visiblePages"
-                                        :key="page"
-                                        :href="generatePageUrl(page)"
-                                        :class="[
-                                            'w-[44px] h-[44px] flex items-center justify-center border rounded-md border-[#F1F1F1] hover:bg-gray-300',
-                                            page === props.products.current_page
-                                                ? 'bg-blue-500 border-blue-500 text-white'
-                                                : 'bg-white text-[#707070]',
-                                        ]"
-                                    >
-                                        {{ page }}
-                                    </Link>
-
-                                    <Link
-                                        v-if="props.products.next_page_url"
-                                        :href="props.products.next_page_url"
-                                        class="p-3 border rounded-md bg-white border-[#F1F1F1] hover:bg-gray-300"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                fill="#707070"
-                                                d="m11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707l-1.414 1.414L15.586 11H6v2h9.586z"
-                                            />
-                                        </svg>
-                                    </Link>
-                                </div>
+                                        <title>Right-arrow-alt SVG Icon</title>
+                                        <path
+                                            fill="#707070"
+                                            d="m11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707l-1.414 1.414L15.586 11H6v2h9.586z"
+                                        />
+                                    </svg>
+                                </Link>
                             </div>
                         </div>
                     </div>
