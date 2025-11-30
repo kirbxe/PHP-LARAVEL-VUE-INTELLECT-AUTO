@@ -4,7 +4,7 @@
             <input
                 type="range"
                 min="0"
-                max="100000"
+                max="50000"
                 step="100"
                 v-model="minPrice"
                 class="slider slider-min"
@@ -13,7 +13,7 @@
             <input
                 type="range"
                 min="0"
-                max="100000"
+                max="50000"
                 step="100"
                 v-model="maxPrice"
                 class="slider slider-max"
@@ -38,7 +38,7 @@
                     v-model="maxPrice"
                     type="number"
                     class="price-input"
-                    placeholder="100000"
+                    placeholder="50000"
                     @input="handlePriceChange"
                 >
             </div>
@@ -54,7 +54,7 @@ const props = defineProps({
 });
 
 const minPrice = ref(props.filters.min_price || 0);
-const maxPrice = ref(props.filters.max_price || 100000);
+const maxPrice = ref(props.filters.max_price || 50000);
 
 const handlePriceChange = () => {
     debouncedFilter();
@@ -66,13 +66,14 @@ const handleSliderChange = () => {
 // Следим за изменениями фильтров из props
 watch(() => props.filters, (newFilters) => {
     minPrice.value = newFilters.min_price || 0;
-    maxPrice.value = newFilters.max_price || 100000;
+    maxPrice.value = newFilters.max_price || 50000;
 });
 </script>
 
 <style scoped>
 .price-range {
     padding: 16px 0 32px 0;
+    max-width: 198px;
 }
 
 .price-inputs {
@@ -112,6 +113,7 @@ watch(() => props.filters, (newFilters) => {
     background: #E5E5E5;
     border-radius: 2px;
     margin: 20px 0;
+    max-width: 198px;
 }
 
 .slider-track {
