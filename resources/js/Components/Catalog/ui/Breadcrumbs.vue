@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <p class="font-inter text-[12px] text-[#707070] min-w-max h-auto mb-[12px] pl-1 cursor-pointer">{{ text }}</p>
+    <p class="font-inter text-[12px] text-[#707070] min-w-max h-auto mb-[12px] cursor-pointer">{{ text }}</p>
 </template>
 
 <style scoped></style>

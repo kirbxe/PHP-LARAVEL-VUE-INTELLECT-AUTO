@@ -156,6 +156,7 @@ function updateSliderTrack() {
     height: 100%;
     background: #0075B1;
     border-radius: 2px;
+    max-width: 198px;
 }
 
 .slider {

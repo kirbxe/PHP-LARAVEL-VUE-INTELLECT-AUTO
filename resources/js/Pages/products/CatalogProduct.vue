@@ -56,7 +56,7 @@ const generatePageUrl = (page) => {
                             <SortBlock>
                                 <SortBreadcrumbs>
                                     <Link
-                                        class="font-inter text-[12px] text-[#707070] min-w-max h-auto"
+                                        class="font-inter pr-1 text-[12px] text-[#707070] min-w-max h-auto"
                                         href="/dashboard"
                                         >Главная</Link
                                     >
