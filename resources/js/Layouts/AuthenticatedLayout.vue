@@ -86,12 +86,6 @@ const contacts = [
                                 :href="route('dashboard')"
                                 :active="route().current('dashboard')"
                             >
-                                Доставка
-                            </NavLink>
-                            <NavLink
-                                :href="route('dashboard')"
-                                :active="route().current('dashboard')"
-                            >
                                 Адреса
                             </NavLink>
                             <NavLink

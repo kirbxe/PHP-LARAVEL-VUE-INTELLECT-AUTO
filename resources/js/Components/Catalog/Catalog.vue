@@ -2,7 +2,7 @@
 
 <template>
     <div
-        class="w-auto h-auto gap-x-4 gap-y-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        class="w-auto h-auto mt-[80px] gap-x-8 gap-y-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
     >
         <slot></slot>
     </div>

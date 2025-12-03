@@ -8,11 +8,11 @@ defineProps({
 </script>
 
 <template>
-    <div class="rounded-[10px] w-full aspect-square relative">
+    <div class="w-full aspect-square relative">
         <img
             :src="LinkSrc"
             alt="Неудалось загрузить изображение"
-            class="w-full aspect-square object-cover"
+            class="w-full rounded-[10px] aspect-square object-cover"
         />
     </div>
 </template>
