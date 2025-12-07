@@ -1,4 +1,3 @@
-<!-- Carousel.vue -->
 <template>
     <div class="flex gap-5">
         <div class="flex flex-col items-center">
@@ -9,7 +8,6 @@
                      alt="Up" />
             </button>
             
-            <!-- Thumbnails -->
             <div>
                 <div v-for="(image, index) in images" 
                      :key="index"
@@ -35,7 +33,6 @@
             </button>
         </div>
 
-        <!-- Right side - Main image -->
         <div class="flex-1">
             <div class=" flex items-center justify-center">
                 <img :src="images[currentIndex]" 

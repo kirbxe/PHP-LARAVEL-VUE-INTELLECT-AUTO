@@ -8,18 +8,17 @@ import CardTitle from "@/Components/Catalog/CardTitle.vue";
 import CardAvailability from "@/Components/Catalog/CardAvailability.vue";
 import CardOldPrice from "@/Components/Catalog/CardOldPrice.vue";
 import CardInfo from "@/Components/Catalog/CardInfo.vue";
-import CardArticle from "@/Components/Catalog/CardArticle.vue";
-import CardBrend from "@/Components/Catalog/CardBrend.vue";
-import CardCategory from "@/Components/Catalog/CardCategory.vue";
+import CardInfoGrey from "@/Components/Catalog/CardInfoGrey.vue";
 import CardButton from "@/Components/Catalog/CardButton.vue";
+import CardTabs from "@/Components/Catalog/CardTabs.vue";
 </script>
 <template>
-    <Head title="CardInfo" />
+    <Head title="Card" />
     <AuthenticatedLayout>
         <div
-            class="max-w-[1360px] mx-auto flex justify-between bg-[#F7F7F7] pt-4"
+            class="max-w-[1360px] mx-auto bg-[#F7F7F7] pt-4"
         >
-            <div>
+            <div class="mb-[64px]">
                 <SortBreadcrumbs class="mb-2">
                     <Link
                         class="pr-1 font-inter text-[12px] text-[#707070] min-w-max h-auto"
@@ -48,19 +47,28 @@ import CardButton from "@/Components/Catalog/CardButton.vue";
 
                         <div class="flex justify-between mt-[32px]">
                             <CardInfo text="Артикул" />
-                            <CardArticle text="Ln2137" />
+                            <CardInfoGrey text="Ln2137" />
                         </div>
                         <div class="flex justify-between">
-                            <CardInfo text="Бренд" /> <CardBrend text="LAVR" />
+                            <CardInfo text="Бренд" />
+                            <CardInfoGrey text="LAVR" />
                         </div>
                         <div class="flex justify-between">
                             <CardInfo text="Категория" />
-                            <CardCategory text="Присадки в топливо" />
+                            <CardInfoGrey text="Присадки в топливо" />
                         </div>
                         <CardButton text="Купить сейчас" />
                     </div>
                 </div>
             </div>
+
+            <div class="h-[484px]">
+                <CardTabs />
+                <div class="">
+
+                </div>
+            </div>
         </div>
     </AuthenticatedLayout>
+
 </template>
