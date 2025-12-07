@@ -11,6 +11,8 @@ import CardInfo from "@/Components/Catalog/CardInfo.vue";
 import CardInfoGrey from "@/Components/Catalog/CardInfoGrey.vue";
 import CardButton from "@/Components/Catalog/CardButton.vue";
 import CardTabs from "@/Components/Catalog/CardTabs.vue";
+import CardReview from "@/Components/Catalog/CardReview.vue";
+import TitleItem from "@/Components/Catalog/ui/TitleItem.vue";
 </script>
 <template>
     <Head title="Card" />
@@ -35,7 +37,7 @@ import CardTabs from "@/Components/Catalog/CardTabs.vue";
 
                 <div class="flex">
                     <Carousel />
-                    <div class="ml-10 max-w-[610px]">
+                    <div class="ml-10 max-w-[635px]">
                         <CardTitle
                             text="LAVR Трехуровневая очистка топливной системы ML100 Petrol, 120 мл, кор (20 шт)"
                         />
@@ -62,12 +64,19 @@ import CardTabs from "@/Components/Catalog/CardTabs.vue";
                 </div>
             </div>
 
-            <div class="h-[484px]">
+            <div class="h-[484px] flex justify-between">
                 <CardTabs />
-                <div class="">
+                <CardReview />
+            </div>
 
+            <div class="h-[454px] mt-[50px] flex justify-between items-start">
+                <TitleItem Title="С этим товаром часто покупают"/>
+                <div class="flex gap-[21px] ">
+                    <img src="/image/leftarrow.svg" alt="">
+                    <img class="mr-[11px]" src="/image/rightarrow.svg" alt="">
                 </div>
             </div>
+            
         </div>
     </AuthenticatedLayout>
 
