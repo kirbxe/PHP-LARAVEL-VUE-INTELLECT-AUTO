@@ -2,7 +2,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
 import Breadcrumbs from "@/Components/Catalog/ui/Breadcrumbs.vue";
-import SortBreadcrumbs from "@/Components/Catalog/SortBreadcrumbs.vue";
 import Carousel from "@/Components/Catalog/Carousel.vue";
 import CardTitle from "@/Components/Catalog/CardTitle.vue";
 import CardAvailability from "@/Components/Catalog/CardAvailability.vue";
@@ -13,15 +12,18 @@ import CardButton from "@/Components/Catalog/CardButton.vue";
 import CardTabs from "@/Components/Catalog/CardTabs.vue";
 import CardReview from "@/Components/Catalog/CardReview.vue";
 import TitleItem from "@/Components/Catalog/ui/TitleItem.vue";
+import CardProduct from "@/Components/Catalog/CardProduct.vue";
+
+const props = defineProps({ products: Object });
 </script>
 <template>
     <Head title="Card" />
     <AuthenticatedLayout>
         <div
-            class="max-w-[1360px] mx-auto bg-[#F7F7F7] pt-4"
+            class="max-w-[1360px] mx-auto pt-4"
         >
             <div class="mb-[64px]">
-                <SortBreadcrumbs class="mb-2">
+                <div class="mb-2 min-w-max h-auto flex">
                     <Link
                         class="pr-1 font-inter text-[12px] text-[#707070] min-w-max h-auto"
                         href="/dashboard"
@@ -33,7 +35,7 @@ import TitleItem from "@/Components/Catalog/ui/TitleItem.vue";
                         >/ Каталог товаров</Link
                     >
                     <Breadcrumbs text="/ Карточка товара" />
-                </SortBreadcrumbs>
+                </div>
 
                 <div class="flex">
                     <Carousel />
@@ -69,14 +71,23 @@ import TitleItem from "@/Components/Catalog/ui/TitleItem.vue";
                 <CardReview />
             </div>
 
-            <div class="h-[454px] mt-[50px] flex justify-between items-start">
-                <TitleItem Title="С этим товаром часто покупают"/>
-                <div class="flex gap-[21px] ">
-                    <img src="/image/leftarrow.svg" alt="">
-                    <img class="mr-[11px]" src="/image/rightarrow.svg" alt="">
+            <div class="h-[454px] mt-[50px] ">
+                <div class="flex justify-between items-start mb-[24px]">
+                    <TitleItem Title="С этим товаром часто покупают"/>
+                    <div class="flex gap-[21px] ">
+                        <img class="cursor-pointer" src="/image/leftarrow.svg" alt="">
+                        <img class="mr-[11px] cursor-pointer" src="/image/rightarrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="flex gap-[27.5px]">
+                <CardProduct TextButton="Купить"/>
+                <CardProduct TextButton="Купить"/>
+                <CardProduct TextButton="Купить"/>
+                <CardProduct TextButton="Купить"/>
+                <CardProduct TextButton="Купить"/>
                 </div>
             </div>
-            
+
         </div>
     </AuthenticatedLayout>
 

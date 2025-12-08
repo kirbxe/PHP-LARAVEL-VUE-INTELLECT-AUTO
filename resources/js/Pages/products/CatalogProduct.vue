@@ -7,7 +7,6 @@ import SortBlock from "@/Components/Catalog/SortBlock.vue";
 import TitleItem from "@/Components/Catalog/ui/TitleItem.vue";
 import CardProduct from "@/Components/Catalog/CardProduct.vue";
 import Breadcrumbs from "@/Components/Catalog/ui/Breadcrumbs.vue";
-import SortBreadcrumbs from "@/Components/Catalog/SortBreadcrumbs.vue";
 
 const props = defineProps({ products: Object });
 
@@ -48,20 +47,20 @@ const generatePageUrl = (page) => {
         <Head title="Product" />
         <div :key="pageKey">
             <div
-                class="max-w-[1360px] mx-auto flex justify-center bg-[#F7F7F7]"
+                class="max-w-[1360px] mx-auto flex justify-center"
             >
                 <div class="pt-4 w-full">
                     <div class="flex justify-between gap-8">
                         <div>
                             <SortBlock>
-                                <SortBreadcrumbs>
+                                <div class="min-w-max h-auto flex">
                                     <Link
                                         class="font-inter pr-1 text-[12px] text-[#707070] min-w-max h-auto"
                                         href="/dashboard"
                                         >Главная</Link
                                     >
                                     <Breadcrumbs text="/ Каталог товаров" />
-                                </SortBreadcrumbs>
+                                </div>
                                 <TitleItem Title="Каталог товаров" />
                             </SortBlock>
                         </div>

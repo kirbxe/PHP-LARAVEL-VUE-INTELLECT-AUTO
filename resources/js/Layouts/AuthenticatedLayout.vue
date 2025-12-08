@@ -43,7 +43,7 @@ const contacts = [
 
 <template>
     <div>
-        <div class="min-h-screen bg-gray-100 flex flex-col">
+        <div class="min-h-screen bg-[#F7F7F7] flex flex-col">
             <nav class="border-b border-gray-100 py-3 bg-white">
                 <!-- Primary Navigation Menu -->
                 <!-- Хэдер его состовляющие и Навигационные элементы, при ширине 1440пкс -->
